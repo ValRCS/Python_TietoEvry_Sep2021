@@ -2,7 +2,7 @@
 while True:
     first_number = input(f"Please enter first number: ")
     try:
-        a = float(first_number)
+        a = float(first_number)  # will throw exception if not a number
     except ValueError:
         print(f"Wrong number {first_number} format. Please enter in format xx.x")
         continue

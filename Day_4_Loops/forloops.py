@@ -111,9 +111,9 @@
 # # # # # # use this if you need index
 # # # #
 my_name = "Valdis"
-# for index, c in enumerate(my_name): # i could have used i instead of index
-#     print(f"Letter {index} is {c}")
-#     print("Letter", index, "is",c)
+for index, c in enumerate(my_name): # i could have used i instead of index
+    print(f"Letter {index} is {c}")
+    print("Letter", index, "is",c)
 # # # #
 # for index, c in enumerate(my_name,start=1):
 #     print("Letter", index, "is",c)

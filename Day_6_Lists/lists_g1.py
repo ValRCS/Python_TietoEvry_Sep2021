@@ -91,105 +91,110 @@ print(my_reversed_numbers)
 # # empty_list = []  # more common
 # also_empty_list = list()
 # print(empty_list, also_empty_list)
-# food = "kartupelis"
-# print(food)
-# food_chars = list(food) # so type casing just like str, int, float, bool etc
-# print(food_chars)
-# food_chars[5] = "m"  # so replacing the 6th elemen - in this case a letter p with m
-# print(food_chars)
-# maybe_food = str(food_chars) # not quite
-# print(maybe_food) # just a string of what printing a list would look like
-# food_again = "".join(food_chars) # "" shows what we are putting between each character
-# print(food_again)
-# food_again_with_space = " ".join(food_chars) # "" shows what we are putting between each character
-# print(food_again_with_space)
-# food_again_with_smile = "**😁**".join(food_chars) # "" shows what we are putting between each character
-# print(food_again_with_smile)
-# small_list = ["Valdis", "likes", "beer"]
-# separator = "==="
-# new_text = separator.join(small_list)
-# print(new_text)
-# # num_string = "||".join(numbers) # we will need to convert numbers to theri str representation
-# # print(num_string)
+food = "kartupelis"
+print(food)
+food_chars = list(food) # so type casing just like str, int, float, bool etc
+# list will work with any sequence type - and str is a sequence type
+print(food_chars)
+print("OLD and TIRED", food_chars[5])
+food_chars[5] = "m"  # so replacing the 6th elemen - in this case a letter p with m
+print("NEW and FRESH", food_chars[5])
+print(food_chars)
+maybe_food = str(food_chars) # not quite what we want, but it is a string
+print(maybe_food) # just a string of what printing a list would look like
+# so maybe_food is a string, but it is not a list anymore
+food_again = "".join(food_chars) # "" shows what we are putting between each character, in this case nothing
+print(food_again)
+food_again_with_space = " ".join(food_chars) # "" shows what we are putting between each character
+print(food_again_with_space)
+food_again_with_smile = "**😁**".join(food_chars) # "" shows what we are putting between each character
+print(food_again_with_smile)
+small_list = ["Valdis", "likes", "beer"]
+separator = "==="
+new_text = separator.join(small_list)
+print(new_text)
+# num_string = "||".join(numbers) # we will need to convert numbers to theri str representation
+# print(num_string)
+
 # # # print(list("kartupelis")) # can create a list out of string
-# print("kartupelis".split("p")) # i could split string by something
-# sentence = "A quick brown fox jumped over a sleeping dog"
-# print(sentence)  # string
-# words = sentence.split(" ")  # we split by some character in this case whitespace
-# print(words) # list with words
+print("kartupelis".split("p")) # i could split string by something
+sentence = "A quick brown fox jumped over a sleeping dog"
+print(sentence)  # string
+words = sentence.split(" ")  # we split by some character in this case whitespace
+print(words) # list with words
 #
 # sentence_with_exclams = ".!.".join(words)
 # print(sentence_with_exclams)
 # # # # # # # # # how to check for existance in list
-# print(my_list)
-# print(3.65 in my_list)
+print(my_list)
+print("3.65 is in my list?", 3.65 in my_list)
 # print(66 in my_list)
-# print("Valdis" in my_list)
-# print(my_list[2]) # Valdis
-# print("al" in "Valdis", "al" in my_list[2])
-# print("al" in my_list)  # this is false,because in needs a exact match, to get partial we need to go deeper
+print("Valdis" in my_list)
+print(my_list[2]) # Valdis
+print("al" in "Valdis", "al" in my_list[2])
+print("al" in my_list)  # this is false,because in needs a exact match, to get partial we need to go deeper
 # # # # # # # # # # # iterate over items
 # print("*"*20)
 # # for it in my_list:
 # #     print(it)
 # #
-# needle = "al" # what we want to find in our list
-# for item in my_list:
-#     print("Checking ", item)
-#     if type(item) == str and needle in item: # not all types have in operator
-#         print(f"Found {needle=} in {item=}") # python 3.8 and up, good for debuggin
-#         print(f"Found needle={needle} in item={item}") # for python 3.7
+needle = "al" # what we want to find in our list
+for item in my_list:
+    print("Checking ", item)
+    if type(item) == str and needle in item: # not all types have in operator
+        print(f"Found {needle=} in {item=}") # python 3.8 and up, good for debuggin
+        print(f"Found needle={needle} in item={item}") # for python 3.7
 # #
 # # # # # # # # # # #
-# # # # # # # # my_list.append()
-# my_list.append("Bauskas alus") # adds "Bauskas alus" at the end of my_list
-# my_list.append("Valmiermuižas alus")  # IN PLACE methods, means we modify the list
-# print(my_list)
+# # # # # # # my_list.append()
+my_list.append("Bauskas alus") # adds "Bauskas alus" at the end of my_list
+my_list.append("Valmiermuižas alus")  # IN PLACE methods, means we modify the list
+print(my_list)
 # #
 # # # # # # # # # example how to filter something
-# find_list = [] # so we have an empty list in beginning
-# needle = "al"
-# for item in my_list: # i can reuse item in the loop
-#     # if needle in item: will not work because we have non strings in list
-#     if type(item) == str and needle in item:
-#         print(f"Found {needle=} in {item=}")
-#         find_list.append(item)
-# print(f"{needle=} found in {find_list=}")
+find_list = [] # so we have an empty list in beginning
+needle = "al"
+for item in my_list: # i can reuse item in the loop
+    # if needle in item: will not work because we have non strings in list
+    if type(item) == str and needle in item:
+        print(f"Found {needle=} in {item=}")
+        find_list.append(item)
+print(f"{needle=} found in {find_list=}")
 # # # # # # # # # ps the above could be done simpler with list comprehension
 # #
 # # # # # # # # # # # out of place meaning find_list stays the same
-# new_list = my_list + ["Kalējs", "Audējs"] # OUT OF PLACE addition, my_list is not modified
-# print(len(new_list), len(my_list))
-# print(my_list)
-# print(new_list)
+new_list = my_list + ["Kalējs", "Audējs"] # OUT OF PLACE addition, my_list is not modified
+print(len(new_list), len(my_list))
+print(my_list)
+print(new_list)
 # #
-# new_list += ["Malējs", "Salīgais"] # shorthand for new_list = new_list + [new items ] so flattened
-# print(new_list)
-# new_list.append(["Svarīgais", "Mazais"]) #notice append added a list a s nested
-# print(new_list)
-# print(new_list[-1])
-# print(new_list[-1][-1], new_list[-1][1]) # in this case for size 2 1 and -1 give same results
-# new_list.extend(["Fantastiskais", "Lapsa"]) # very similar to += IN PLACE
-# print(new_list)
+new_list += ["Malējs", "Salīgais"] # shorthand for new_list = new_list + [new items ] so flattened
+print(new_list)
+new_list.append(["Svarīgais", "Mazais"]) #notice append added a list a s nested
+print(new_list) # notice that we have a list in the list
+print(new_list[-1])
+print(new_list[-1][-1], new_list[-1][1]) # in this case for size 2 1 and -1 give same results
+new_list.extend(["Fantastiskais", "Lapsa"]) # very similar to += IN PLACE
+print(new_list)
 # #
 # # # print(f"{str(my_list)}") # not quite what we want
 # # # # # # how to convert all values to str
-# str_list = []
-# for item in my_list:
-#     str_list.append(str(item)) # so if item is already string nothing will happen
-# print(str_list)
+str_list = []
+for item in my_list:
+    str_list.append(str(item)) # so if item is already string nothing will happen
+print(str_list)
 # #
-# number_str_list = []
-# for num in numbers:
-#     number_str_list.append(str(num))
-# print(numbers) # list of integers
-# print(number_str_list) # a list of strings
+number_str_list = []
+for num in numbers:
+    number_str_list.append(str(num))
+print(numbers) # list of integers
+print(number_str_list) # a list of strings
 #
-# number_string = ",".join(number_str_list)
-# print(number_string)
+number_string = ",".join(number_str_list)
+print(number_string)
 # # i can go in reverse as well
-# numbers_deconstructed = number_string.split(",")
-# print(numbers_deconstructed)
+numbers_deconstructed = number_string.split(",")
+print(numbers_deconstructed)
 #
 # my_numbers = []
 # for it in numbers_deconstructed:
@@ -200,21 +205,29 @@ print(my_reversed_numbers)
 #
 # # # # # # # # # # list comprehensions make it even short
 # print(my_list)
-# str_list_2 = [str(item) for item in my_list]  # so i go through each item and make a new list with string versions of all items
-# print(str_list_2)
+str_list_2 = [str(item) for item in my_list]  # so i go through each item and make a new list with string versions of all items
+print(str_list_2)
 # #
-# squares = [n**2 for n in my_numbers] # a new list with squares of original numbers
-# print(squares)
+square_list = []
+for n in range(10):
+    square_list.append(n**2)
+print(square_list)
+
+# list comprehension example of square_list
+squares = [n**2 for n in my_numbers] # a new list with squares of original numbers
+print(squares)
 # # wierd_squares = [n*n or 9000 for n in my_numbers] # we could utilie or for 0
 # # print(wierd_squares)
 #
-# just_numbers = [1,5,2,2,5,7,9,1,5,11,10]
-# odd_numbers = [n for n in just_numbers if n%2 == 1]
-# print(odd_numbers)
+# list comprehension can serve as a filter
+just_numbers = [1,5,2,2,5,7,9,1,5,11,10]
+odd_numbers = [n for n in just_numbers if n%2 == 1]
+print(odd_numbers)
 #
-# odd_squares = [n*n for n in my_numbers if n%2 == 1]
-# print(odd_squares)
-# #
+print(numbers)
+odd_squares = [n*n for n in numbers if n%2 == 1]
+print(odd_squares)
+#
 # # same idea as above
 # odd_squares_also = []
 # for n in my_numbers:
@@ -223,28 +236,28 @@ print(my_reversed_numbers)
 #         # advantage of long approach is that here we can do more stuff,print etc
 # print(odd_squares_also)
 #
-# print(str_list)
-# print(str_list_2)
+print(str_list)
+print(str_list_2)
 # #
-# print("Lists have equal values inside?",str_list == str_list_2) # check if lists containe equal values
-# print("Lists are physically same?", str_list is str_list_2) # check if our variables reference the same list
-# str_list_3 = str_list # so str_list_3 is a shortcut to same values as, NOT A COPY!
-# print(str_list == str_list_3, str_list is str_list_3)
-# str_list_copy = str_list.copy() # create a new list with same values
-# print(str_list == str_list_copy, str_list is str_list_copy)
-# # print(id(str_list))
-# # print(id(str_list_3))
-# # print(id(str_list_copy))
+print("Lists have equal values inside?",str_list == str_list_2) # check if lists contain equal values
+print("Lists are physically same?", str_list is str_list_2) # check if our variables reference the same list
+str_list_3 = str_list # so str_list_3 is a shortcut to same values as, NOT A COPY!
+print(str_list == str_list_3, str_list is str_list_3)
+str_list_copy = str_list.copy() # create a new list with same values
+print(str_list == str_list_copy, str_list is str_list_copy)
+print(id(str_list))
+print(id(str_list_3))
+print(id(str_list_copy))
 # #
-# print(needle)
-# # # # # # # # need needle of course
-# # # # # so i can add if as filter to list comprehension
-# beer_list = [item for item in str_list if needle in item]
-# print(beer_list)
-# beer_list = beer_list[1:] #get rid of Valdis (first element with index 0) in my beer list
-# print(beer_list)
+print(needle)
+# # # # # # # need needle of course
+# # # # so i can add if as filter to list comprehension
+beer_list = [item for item in str_list if needle in item]
+print(beer_list)
+beer_list = beer_list[1:] #get rid of Valdis (first element with index 0) in my beer list
+print(beer_list)
 # #
-# beer_list += ["Užavas alus"] # we create a list on demand - list literal beer_list = beer_list + ["Užavas alus"]
+beer_list += ["Užavas alus"] # we create a list on demand - list literal beer_list = beer_list + ["Užavas alus"]
 # # # # # similar to beer_list.append("Užavas alus")
 # print(beer_list)
 # #
@@ -257,34 +270,42 @@ print(my_reversed_numbers)
 # beer_list += ["Malējs"]  # same as new_list = new_list + ["Malējs"]
 # # # # # # new_list
 # #
-# print(beer_list[-1])
-# print(beer_list)
-# last_beer = beer_list[-1]
+print(beer_list[-1])
+print(beer_list)
+last_beer = beer_list[-1]
+print(last_beer)
+print(beer_list)
 # beer_list = beer_list[:-1] #so i get rid of last element
 # print(last_beer, beer_list)
-# beer_list.append("Malējs")
-# print(beer_list)
-# last_beer = beer_list.pop()  # also IN PLACE meaning i destroyed the last value
-# print(last_beer, beer_list)
+beer_list.append("Malējs")
+print(beer_list)
+last_beer = beer_list.pop()  # also IN PLACE meaning i destroyed the last value
+print(last_beer, beer_list)
+
+beer_list.reverse() # so i reverse the list IN PLACE
+print(beer_list)
+beer_list.reverse() # so i reverse the list IN PLACE
+print(beer_list)
 # #
 # # # # # print(f"We took out {last_beer}")
 # # # # # print(beer_list)
 # # # # # beer_list.append(last_beer)
 # # # # # print(beer_list)
 # #
-# beer_count = 0
-# for el in beer_list:
-#     if "alus" in el:
-#     # if "alus" == el: # so count will be for exact matches
-#         beer_count += 1
-# print(beer_count)
+beer_count = 0
+for el in beer_list:
+    if "alus" in el:
+    # if "alus" == el: # so count will be for exact matches
+        beer_count += 1
+print(beer_count)
 # #
 # # # # # so above count can be done with count method
-# print(beer_list.count("alus")) # only exact matches
-# print(beer_list.index("alus")) # will be 0 since we start counting with 0
+print(beer_list.count("alus")) # only exact matches
+print(beer_list.index("alus")) # will be 0 since we start counting with 0
 # # # print(beer_list.find("Mālenīetis")) # find does not exist for lists, unlike string
-# beer_list.extend(["Labietis", "Mālpils alus"]) # again in place similar to +=
-# print(beer_list)
+beer_list.extend(["Labietis", "Mālpils alus"]) # again in place similar to +=
+print(beer_list)
+print(beer_list.index("Mālpils alus"))
 # beer_with_zh = [el for el in beer_list if "ža" in el]
 # print(beer_with_zh)
 # # # # print(len(beer_with_zh))
@@ -293,15 +314,15 @@ print(my_reversed_numbers)
 # # # # # has_alus_count = len([el for el in beer_list if "alus" in el])
 # # # # # print(has_alus_count)
 # #
-# beer_list.insert(2, "Cēsu sula") # so it will insert BEFORE index 2 (meaning before 3rd element)
-# print(beer_list)
-# beer_list.insert(5, "Cēsu sula") # in general we want append instead of insert for speed
-# print(beer_list)
-# beer_list.remove("Cēsu sula") # removes first occurance IN PLACE
-# print(beer_list)
+beer_list.insert(2, "Cēsu sula") # so it will insert BEFORE index 2 (meaning before 3rd element)
+print(beer_list)
+beer_list.insert(5, "Cēsu sula") # in general we want append instead of insert for speed
+print(beer_list)
+beer_list.remove("Cēsu sula") # removes first occurance IN PLACE
+print(beer_list)
 # # we could keep removing, but easier is to use a list comprehension to make a new list
-# clean_beers = [el for el in beer_list if el != "Cēsu sula"]
-# print(clean_beers)
+clean_beers = [el for el in beer_list if el != "Cēsu sula"]
+print(clean_beers)
 #
 # while "Cēsu sula" in beer_list.copy(): # careful with looping and changing element size
 #     print("found Cēsu sula")
@@ -317,12 +338,12 @@ print(my_reversed_numbers)
 # #
 # # beer_list.reverse() # in place reversal
 # # print(beer_list)
-# new_beer_list = beer_list[::-1]  # so i save the reversed list but keep the original
-# # print(new_beer_list)
+new_beer_list = beer_list[::-1]  # so i save the reversed list but keep the original
+print(new_beer_list)
 # #
 # # # # # # # # # # so if we have comparable data types inside (so same types)
-# new_beer_list.sort() # in place sort, modifies existing
-# print(new_beer_list)
+new_beer_list.sort() # in place sort, modifies existing
+print(new_beer_list)
 # num_list = [1,2,3,0, -5.5, 2.7, True, False, 0.5, 0] # we can compare int, float and bool
 # print(num_list)
 # print(num_list.sort()) # returns None! because IN PLACE
@@ -334,8 +355,10 @@ print(my_reversed_numbers)
 # # # # # print(sorted_by_len_rev)
 # # # # # print( min(beer_list), max(beer_list)) # by alphabet
 # #
-# numbers = [1, 4, -5, 3.16, 10, 9000, 5]
-# print(min(numbers),max(numbers), sum(numbers), sum(numbers)/len(numbers))
+numbers = [1, 4, -5, 3.16, 10, 9000, 5]
+print(min(numbers),max(numbers), sum(numbers), sum(numbers)/len(numbers))
+my_sorted_numbers = sorted(numbers)  # OUT OF PLACE sort we need to save it in new variable
+print(my_sorted_numbers)
 # # avg = round(sum(numbers)/len(numbers), 2)
 # # print(avg)
 # #

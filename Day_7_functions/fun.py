@@ -268,16 +268,17 @@ def var_fun(required_n, *optional_arg_list, my_default=1000):
 
 #
 #
-# var_fun(5)
-# var_fun(10,30)
-# var_fun(10,30,40,50) # optional arguments are always at the end, before default arguments,my_default is optional and still 1000
-# var_fun(10,30,40,50, my_default=2000) # my_default is optional and so now it is 2000
+# var_fun(5) var_fun(10,30) var_fun(10,30,40,50) # optional arguments are always at the end, before default
+# arguments,my_default is optional and still 1000 var_fun(10,30,40,50, my_default=2000) # my_default is optional and
+# so now it is 2000
 
 # # we call that main() from if guard
-def main(): # can call other functions from here, main can be named anything
+def main():  # can call other functions from here, main can be named anything
     print("Starting my main program")
-    result = var_fun(100,6,10, 50, my_default=1_000_000)
+    result = var_fun(100, 6, 10, 50, my_default=1_000_000)
     print(result)
+
+
 #     result = var_fun(200)  # so only 200 was required rest were optional
 #     print(result)
 #     # init function here
@@ -288,5 +289,5 @@ def main(): # can call other functions from here, main can be named anything
 # # this is used to check whether you started function as main or imported it as a library
 if __name__ == "__main__":
     main()
-    # i could also use this to check if you are running this file as a library
-    # i can run more code here if i want to
+    # I could also use this to check if you are running this file as a library
+    # I can run more code here if i want to

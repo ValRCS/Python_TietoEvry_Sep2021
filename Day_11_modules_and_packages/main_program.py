@@ -1,6 +1,7 @@
 # import sys  # this is a module from Python standard library
 # import os  # operating system
 # # generally you want to import Python standard stuff first before moving onto our modules
+import os
 import sys  # from standard library
 
 # import my_mod  # my_mod is a module that I created
@@ -44,10 +45,10 @@ def main():  # main function name is not required, but it is a good practice for
     # new_garage = my_mod.Garage("LNB")
     # print(new_garage.gname)
 
-    #     print("Python version", sys.version_info)
-    #     print("Python will look for modules in order of:", "\n".join(sys.path))
-    #     print("Current working directory is", os.getcwd())
-    #     print("OS is ", os.name)
+    print("Python version", sys.version_info)
+    print("Python will look for modules in order of:", "\n".join(sys.path))
+    print("Current working directory is", os.getcwd())
+    print("OS is ", os.name)
     #     # so how does Python search for modules
 
     # print(mm.add(1100,333))

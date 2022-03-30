@@ -34,10 +34,11 @@ class Deck:
         return cards
 
 
-print(get_shuffled_cards())
-my_deck = Deck()
-my_deck.shuffle()
-print(my_deck)
-print(my_deck.get_cards(2))
-print(my_deck.get_cards(6))
-print(my_deck)
+if __name__ == "__main__":
+    print(get_shuffled_cards())
+    my_deck = Deck()
+    my_deck.shuffle()
+    print(my_deck)
+    print(my_deck.get_cards(2))
+    print(my_deck.get_cards(6))
+    print(my_deck)

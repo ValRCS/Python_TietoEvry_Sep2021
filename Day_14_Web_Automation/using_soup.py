@@ -8,14 +8,17 @@ print(response.status_code)  # 200 would be good 404 would be bad
 
 print(response.text[:500])  # first 500 characters
 
-# we parse our raw text html into a soup object
+# i could parse by hand but i can use beautiful soup
+
+# # we parse our raw text html into a soup object
 soup = bs(response.text, "html.parser")  # html parser is optional we can tell it use lxml which might be better parser
 print(soup.title)
 print(type(soup))
-headline = soup.find("h1")
+headline = soup.find("h1") # there should only be one h1 tag in the html
 print(headline)
+
 print(headline.text)  # gets you text
-images = soup.find_all("img")  # get all images
+images = soup.find_all("img")  # get all images tags
 print(images)
 print(len(images))
 # we would want some logic here to test length of images

@@ -77,3 +77,7 @@ print(*new_albums, sep='\n')
 # print(some_album)
 con.commit()  # this should save the database transactions
 con.close()
+
+# for more serious SQL work you can use library such as SQLAlchemy
+# https://www.sqlalchemy.org/
+# SQL library makes it easier to work with databases
